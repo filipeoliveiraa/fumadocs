@@ -84,14 +84,11 @@ export function SidebarDrawer({ contentProps }: SidebarDrawerProps) {
         <Drawer.Viewport className="[--viewport-padding:0px] supports-[-webkit-touch-callout:none]:[--viewport-padding:0.625rem] fixed inset-0 flex items-stretch justify-end p-(--viewport-padding)">
           <Drawer.Popup
             id="nd-mobile-sidebar"
-            className="[--bleed:3rem] supports-[-webkit-touch-callout:none]:[--bleed:0px] overflow-hidden w-[360px] h-full max-w-[calc(100vw-3rem+var(--bleed))] pr-(--bleed) -mr-(--bleed) border-l bg-fd-background text-fd-foreground outline-none shadow-md touch-auto translate-x-(--drawer-swipe-movement-x) transition-transform duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-swiping:select-none data-ending-style:translate-x-[calc(100%-var(--bleed)+var(--viewport-padding)+2px)] data-starting-style:translate-x-[calc(100%-var(--bleed)+var(--viewport-padding)+2px)] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] supports-[-webkit-touch-callout:none]:border supports-[-webkit-touch-callout:none]:rounded-xl"
+            className="[--bleed:3rem] supports-[-webkit-touch-callout:none]:[--bleed:0px] overflow-y-auto fd-scroll-container w-[360px] h-full max-w-[calc(100vw-3rem+var(--bleed))] pr-(--bleed) -mr-(--bleed) border-l bg-fd-background text-fd-foreground outline-none shadow-md touch-auto translate-x-(--drawer-swipe-movement-x) transition-transform duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] data-swiping:select-none data-ending-style:translate-x-[calc(100%-var(--bleed)+var(--viewport-padding)+2px)] data-starting-style:translate-x-[calc(100%-var(--bleed)+var(--viewport-padding)+2px)] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] supports-[-webkit-touch-callout:none]:border supports-[-webkit-touch-callout:none]:rounded-xl"
           >
             <Drawer.Content
               {...contentProps}
-              className={cn(
-                'flex flex-col px-3 size-full overflow-y-auto fd-scroll-container',
-                contentProps?.className,
-              )}
+              className={cn('flex flex-col px-3 size-full', contentProps?.className)}
             >
               <div className="sticky flex items-center top-0 py-2 bg-fd-background shadow-lg shadow-fd-background">
                 <Drawer.Title className="px-2.5 flex-1">
